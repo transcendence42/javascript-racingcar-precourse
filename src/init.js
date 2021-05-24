@@ -1,16 +1,8 @@
 'use strict';
 
 import getRandomSingleDigit from './random.js';
+import toggleTagDisplay from './css-handler.js';
 import Car from './car.js';
-
-function toggleTagDisplay(id) {
-  let $tagStyleDisplay = document.getElementById(id);
-  if ($tagStyleDisplay.style.display == 'none') {
-    $tagStyleDisplay.style.display = 'block';
-  } else {
-    $tagStyleDisplay.style.display = 'none';
-  }
-}
 
 /*
  ** Init
