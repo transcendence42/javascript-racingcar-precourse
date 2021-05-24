@@ -6,7 +6,7 @@ function checkValidCarName(carNames) {
 }
 
 function checkValidCount(count) {
-  if (count === String(parseInt(count))) {
+  if (count === String(parseInt(count, 10))) {
     return true;
   }
   return false;
