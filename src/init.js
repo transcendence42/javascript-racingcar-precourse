@@ -1,10 +1,15 @@
 'use strict';
 
+function Car(name) {
+  this.name = name;
+}
+
 /*
  ** Init
  */
 
 export default function initGame() {
+  let _cars = [];
   registerButtonEvent();
 
   return;
@@ -37,12 +42,14 @@ export default function initGame() {
   }
 
   function clickCarNamesSubmit() {
-    let inputCarName = getInputCarName();
-    if (!checkValidCarName(inputCarName)) {
-      alert('유효하지 않은 입력입니다. 재입력 해주세요. 입력: ', inputCarName);
+    let inputCarNames = getInputCarName();
+    if (!checkValidCarName(inputCarNames)) {
+      alert('유효하지 않은 입력입니다. 재입력 해주세요. 입력: ', inputCarNames);
       return;
     }
-    console.log('2');
+    inputCarNames.forEach((name) => {
+      _cars.push(new Car(name));
+    });
   }
 
   function clickRacingCountSubmit() {
