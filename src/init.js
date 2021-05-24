@@ -1,6 +1,7 @@
 'use strict';
 
 import { checkValidCarName, checkValidCount } from './check-value.js';
+import { getInputCarName, getInputCount } from './input.js';
 import getRandomSingleDigit from './random.js';
 import toggleTagDisplay from './css-handler.js';
 import Car from './car.js';
@@ -12,11 +13,13 @@ import Car from './car.js';
 export default function initGame() {
   let _cars = [];
   let _count = 0;
+
   toggleTagDisplay('racing-count-container');
   toggleTagDisplay('result-container');
   registerButtonEvent();
 
   return;
+  
   /*
    ** Start Game
    */
@@ -48,18 +51,6 @@ export default function initGame() {
     const $resultContainer = document.getElementById('result-container');
     $resultContainer.innerHTML +=
       result + '<br>최종 우승자:' + getWinners().join();
-  }
-
-  /*
-   ** Input
-   */
-
-  function getInputCarName() {
-    return document.getElementById('car-names-input').value.split(',');
-  }
-
-  function getInputCount() {
-    return document.getElementById('racing-count-input').value;
   }
 
   /*
