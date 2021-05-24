@@ -15,7 +15,7 @@ export default function initGame() {
   toggleTagDisplay('racing-count-container');
   toggleTagDisplay('result-container');
   registerButtonEvent();
-  
+
   /*
    ** Event Listener
    */
@@ -31,6 +31,7 @@ export default function initGame() {
       alert(
         `유효하지 않은 입력입니다. 재입력 해주세요. 입력: ${inputCarNames}`,
       );
+      document.getElementById('car-names-input').value = '';
       return;
     }
     inputCarNames.forEach((name) => {
@@ -43,6 +44,7 @@ export default function initGame() {
     _count = getInputCount();
     if (!checkValidCount(_count)) {
       alert(`유효하지 않은 입력입니다. 재입력 해주세요.`);
+      document.getElementById('racing-count-input').value = 0;
       return;
     }
     _count = parseInt(_count, 10);
