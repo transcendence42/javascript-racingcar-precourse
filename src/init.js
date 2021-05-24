@@ -37,8 +37,10 @@ export default function initGame() {
   }
 
   function clickCarNamesSubmit() {
-    if (!checkValidCarName(getInputCarName())) {
-      alert('hi');
+    let inputCarName = getInputCarName();
+    if (!checkValidCarName(inputCarName)) {
+      alert('유효하지 않은 입력입니다. 재입력 해주세요. 입력: ', inputCarName);
+      return;
     }
     console.log('2');
   }
