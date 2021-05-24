@@ -1,5 +1,6 @@
 'use strict';
 
+import { checkValidCarName, checkValidCount } from './check-value.js';
 import getRandomSingleDigit from './random.js';
 import toggleTagDisplay from './css-handler.js';
 import Car from './car.js';
@@ -47,24 +48,6 @@ export default function initGame() {
     const $resultContainer = document.getElementById('result-container');
     $resultContainer.innerHTML +=
       result + '<br>최종 우승자:' + getWinners().join();
-  }
-
-  /*
-   ** Check
-   */
-
-  function checkValidCarName(carNames) {
-    const validCarName = carNames.filter(
-      (carName) => carName.length <= 5 && carName != '',
-    );
-    return validCarName.length === carNames.length;
-  }
-
-  function checkValidCount(count) {
-    if (count === String(parseInt(count))) {
-      return true;
-    }
-    return false;
   }
 
   /*
