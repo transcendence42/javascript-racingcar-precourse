@@ -10,8 +10,8 @@ import Car from './car.js';
  */
 
 export default function initGame() {
-  toggleTagDisplay('racing-count-container');
-  toggleTagDisplay('result-container');
+  toggleTagDisplay(getElements.racingCountContainer);
+  toggleTagDisplay(getElements.resultContainer);
   registerButtonEvent();
 
   /*
@@ -32,7 +32,7 @@ export default function initGame() {
       return;
     }
     getElements.carNamesInput.value = inputCarNames;
-    toggleTagDisplay('racing-count-container');
+    toggleTagDisplay(getElements.racingCountContainer);
   }
 
   function clickRacingCountSubmit() {
@@ -51,7 +51,7 @@ export default function initGame() {
       return;
     }
     count = parseInt(count, 10);
-    toggleTagDisplay('result-container');
+    toggleTagDisplay(getElements.resultContainer);
     startGame(cars, count);
   }
 
