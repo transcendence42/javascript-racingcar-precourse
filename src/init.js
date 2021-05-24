@@ -19,11 +19,16 @@ function toggleTagDisplay(id) {
 
 export default function initGame() {
   let _cars = [];
+  let _count = 0;
   toggleTagDisplay('racing-count-container');
   toggleTagDisplay('result-container');
   registerButtonEvent();
 
   return;
+  /*
+   ** Start Game
+   */
+
   /*
    ** Check
    */
@@ -41,6 +46,10 @@ export default function initGame() {
 
   function getInputCarName() {
     return document.getElementById('car-names-input').value.split(',');
+  }
+
+  function getInputCount() {
+    return document.getElementById('racing-count-input').value;
   }
 
   /*
@@ -65,7 +74,7 @@ export default function initGame() {
   }
 
   function clickRacingCountSubmit() {
-    console.log('bye');
+    _count = getInputCount();
   }
 
   function registerButtonEvent() {
