@@ -1,6 +1,6 @@
 import getRandomSingleDigit from './random.js';
 
-function getWinners(_cars) {
+function findWinners(_cars) {
   const totalDistances = _cars.map((car) => car.distance);
   const maxDistance = Math.max(...totalDistances);
   return _cars
@@ -25,7 +25,7 @@ export default function startGame(_cars, _count) {
     count += 1;
   }
   const $resultContainer = document.getElementById('result-container');
-  $resultContainer.innerHTML += `${result}<br>최종 우승자:${getWinners(
+  $resultContainer.innerHTML += `${result}<br>최종 우승자:${findWinners(
     _cars,
   ).join()}`;
 }
