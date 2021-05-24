@@ -1,17 +1,7 @@
 'use strict';
 
 import getRandomSingleDigit from './random.js';
-
-class Car {
-  constructor(name) {
-    this.name = name;
-    this.distance = 0;
-  }
-
-  _m_move() {
-    this.distance += 1;
-  }
-}
+import Car from './car.js';
 
 function toggleTagDisplay(id) {
   let $tagStyleDisplay = document.getElementById(id);
@@ -35,19 +25,17 @@ export default function initGame() {
 
   return;
   /*
-   ** innerHTML
-   */
-
-  /*
    ** Start Game
    */
 
   function getWinners() {
     const totalDistances = _cars.map((car) => car.distance);
     const maxDistance = Math.max(...totalDistances);
-    return _cars.filter((car) => {
-      return car.distance == maxDistance;
-    }).map(winner=>winner.name);
+    return _cars
+      .filter((car) => {
+        return car.distance == maxDistance;
+      })
+      .map((winner) => winner.name);
   }
 
   function startGame() {
@@ -65,7 +53,8 @@ export default function initGame() {
       count += 1;
     }
     const $resultContainer = document.getElementById('result-container');
-    $resultContainer.innerHTML += result + '<br>최종 우승자:' + getWinners().join();
+    $resultContainer.innerHTML +=
+      result + '<br>최종 우승자:' + getWinners().join();
   }
 
   /*
