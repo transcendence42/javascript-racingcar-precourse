@@ -18,9 +18,8 @@ export default function initGame() {
    ** Event Listener
    */
 
-  function addButtonEvent(buttonId, func) {
-    const $submitButton = document.getElementById(buttonId);
-    $submitButton.addEventListener('click', () => func());
+  function addButtonEvent(submitButton, func) {
+    submitButton.addEventListener('click', () => func());
   }
 
   function clickCarNamesSubmit() {
@@ -57,7 +56,7 @@ export default function initGame() {
   }
 
   function registerButtonEvent() {
-    addButtonEvent('car-names-submit', clickCarNamesSubmit);
-    addButtonEvent('racing-count-submit', clickRacingCountSubmit);
+    addButtonEvent(getElements.carNamesSubmit, clickCarNamesSubmit);
+    addButtonEvent(getElements.racingCountSubmit, clickRacingCountSubmit);
   }
 }
