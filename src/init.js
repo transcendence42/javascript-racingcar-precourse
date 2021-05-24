@@ -9,7 +9,6 @@ import Car from './car.js';
  */
 
 export default function initGame() {
-  const _cars = [];
   let _count = 0;
 
   toggleTagDisplay('racing-count-container');
@@ -34,13 +33,17 @@ export default function initGame() {
       document.getElementById('car-names-input').value = '';
       return;
     }
-    inputCarNames.forEach((name) => {
-      _cars.push(new Car(name));
-    });
+    document.getElementById('car-names-input').value = inputCarNames;
     toggleTagDisplay('racing-count-container');
   }
 
   function clickRacingCountSubmit() {
+    const _cars = [];
+    const inputCarNames = getInputCarName();
+    inputCarNames.forEach((name) => {
+      _cars.push(new Car(name));
+    });
+
     _count = getInputCount();
     if (!checkValidCount(_count)) {
       alert(`유효하지 않은 입력입니다. 재입력 해주세요.`);
