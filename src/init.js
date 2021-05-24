@@ -42,12 +42,12 @@ export default function initGame() {
    ** Start Game
    */
 
-  function getWinner() {
+  function getWinners() {
     const totalDistances = _cars.map((car) => car.distance);
     const maxDistance = Math.max(...totalDistances);
     return _cars.filter((car) => {
       return car.distance == maxDistance;
-    });
+    }).map(winner=>winner.name);
   }
 
   function startGame() {
@@ -65,9 +65,7 @@ export default function initGame() {
       count += 1;
     }
     const $resultContainer = document.getElementById('result-container');
-    $resultContainer.innerHTML += result;
-    console.log(_cars);
-    console.log(getWinner());
+    $resultContainer.innerHTML += result + '<br>최종 우승자:' + getWinners().join();
   }
 
   /*
