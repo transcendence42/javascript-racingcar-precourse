@@ -19,7 +19,7 @@ export default function initGame() {
   registerButtonEvent();
 
   return;
-  
+
   /*
    ** Start Game
    */
@@ -41,7 +41,7 @@ export default function initGame() {
       _cars.forEach((car) => {
         const randomDigit = getRandomSingleDigit();
         if (randomDigit >= 4) {
-          car._m_move();
+          car.move();
         }
         result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
       });

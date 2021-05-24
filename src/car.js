@@ -1,12 +1,10 @@
-'use strict';
-
 export default class Car {
   constructor(name) {
     this.name = name;
     this.distance = 0;
   }
 
-  _m_move() {
+  move() {
     this.distance += 1;
   }
 }
