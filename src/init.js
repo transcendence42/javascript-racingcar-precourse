@@ -9,8 +9,6 @@ import Car from './car.js';
  */
 
 export default function initGame() {
-  let _count = 0;
-
   toggleTagDisplay('racing-count-container');
   toggleTagDisplay('result-container');
   registerButtonEvent();
@@ -39,6 +37,8 @@ export default function initGame() {
 
   function clickRacingCountSubmit() {
     const _cars = [];
+    let _count = 0;
+
     const inputCarNames = getInputCarName();
     inputCarNames.forEach((name) => {
       _cars.push(new Car(name));
