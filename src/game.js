@@ -11,13 +11,19 @@ function findWinners(_cars) {
     .map((winner) => winner.name);
 }
 
+function printWinners(result, _cars) {
+  const $resultContainer = getElements.resultContainer;
+  $resultContainer.innerHTML += `${result}<br>최종 우승자:${findWinners(
+    _cars,
+  ).join()}`;
+}
+
 export default function startGame(_cars, _count) {
   let result = '';
   let count = 0;
   while (count < _count) {
     _cars.forEach((car) => {
-      const randomDigit = getRandomSingleDigit(0, 9);
-      if (randomDigit >= 4) {
+      if (getRandomSingleDigit(0, 9) >= 4) {
         car.move();
       }
       result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
@@ -25,8 +31,5 @@ export default function startGame(_cars, _count) {
     result += '<br>';
     count += 1;
   }
-  const $resultContainer = getElements.resultContainer;
-  $resultContainer.innerHTML += `${result}<br>최종 우승자:${findWinners(
-    _cars,
-  ).join()}`;
+  printWinners(result, _cars);
 }
