@@ -1,9 +1,9 @@
 'use strict';
 
-import getInputCarName from './input.js';
+import initGame from './init.js';
 
 export default function RacingCarGame() {
-  getInputCarName();
+  initGame();
 }
 
 new RacingCarGame();
