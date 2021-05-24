@@ -29,6 +29,10 @@ export default function initGame() {
    ** Start Game
    */
 
+  function startGame() {
+    
+  }
+
   /*
    ** Check
    */
@@ -75,6 +79,8 @@ export default function initGame() {
 
   function clickRacingCountSubmit() {
     _count = getInputCount();
+    toggleTagDisplay('result-container');
+    startGame();
   }
 
   function registerButtonEvent() {
