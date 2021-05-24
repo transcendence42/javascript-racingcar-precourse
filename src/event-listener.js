@@ -20,15 +20,19 @@ function clickCarNamesSubmit() {
   toggleTagDisplay(getElements.racingCountContainer);
 }
 
-function clickRacingCountSubmit() {
+function assignCarName() {
   const cars = [];
-  let count = 0;
-
   const inputCarNames = getInputCarName();
   inputCarNames.forEach((name) => {
     cars.push(new Car(name));
   });
+  return cars;
+}
 
+function clickRacingCountSubmit() {
+  let cars = [];
+  let count = 0;
+  cars = assignCarName();
   count = getInputCount();
   if (!checkValidCount(count)) {
     alert(`유효하지 않은 입력입니다. 재입력 해주세요.`);
