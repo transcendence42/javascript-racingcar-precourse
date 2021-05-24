@@ -77,7 +77,7 @@ export default function initGame() {
       alert(`유효하지 않은 입력입니다. 재입력 해주세요.`);
       return;
     }
-    _count = parseInt(_count);
+    _count = parseInt(_count, 10);
     toggleTagDisplay('result-container');
     startGame();
   }
