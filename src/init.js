@@ -1,5 +1,6 @@
 import { checkValidCarName, checkValidCount } from './check-value.js';
 import { getInputCarName, getInputCount } from './input.js';
+import getElements from './elements.js';
 import startGame from './game.js';
 import toggleTagDisplay from './css-handler.js';
 import Car from './car.js';
@@ -28,31 +29,31 @@ export default function initGame() {
       alert(
         `유효하지 않은 입력입니다. 재입력 해주세요. 입력: ${inputCarNames}`,
       );
-      document.getElementById('car-names-input').value = '';
+      getElements.carNamesInput.value = '';
       return;
     }
-    document.getElementById('car-names-input').value = inputCarNames;
+    getElements.carNamesInput.value = inputCarNames;
     toggleTagDisplay('racing-count-container');
   }
 
   function clickRacingCountSubmit() {
-    const _cars = [];
-    let _count = 0;
+    const cars = [];
+    let count = 0;
 
     const inputCarNames = getInputCarName();
     inputCarNames.forEach((name) => {
-      _cars.push(new Car(name));
+      cars.push(new Car(name));
     });
 
-    _count = getInputCount();
-    if (!checkValidCount(_count)) {
+    count = getInputCount();
+    if (!checkValidCount(count)) {
       alert(`유효하지 않은 입력입니다. 재입력 해주세요.`);
-      document.getElementById('racing-count-input').value = 0;
+      getElements.racingCountInput.value = 0;
       return;
     }
-    _count = parseInt(_count, 10);
+    count = parseInt(count, 10);
     toggleTagDisplay('result-container');
-    startGame(_cars, _count);
+    startGame(cars, count);
   }
 
   function registerButtonEvent() {
