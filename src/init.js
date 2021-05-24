@@ -4,12 +4,23 @@ function Car(name) {
   this.name = name;
 }
 
+function toggleTagDisplay(id) {
+  let $tagStyleDisplay = document.getElementById(id);
+  if ($tagStyleDisplay.style.display == 'none') {
+    $tagStyleDisplay.style.display = 'block';
+  } else {
+    $tagStyleDisplay.style.display = 'none';
+  }
+}
+
 /*
  ** Init
  */
 
 export default function initGame() {
   let _cars = [];
+  toggleTagDisplay('racing-count-container');
+  toggleTagDisplay('result-container');
   registerButtonEvent();
 
   return;
@@ -50,6 +61,7 @@ export default function initGame() {
     inputCarNames.forEach((name) => {
       _cars.push(new Car(name));
     });
+    toggleTagDisplay('racing-count-container');
   }
 
   function clickRacingCountSubmit() {
