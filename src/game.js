@@ -15,7 +15,7 @@ export default function startGame(_cars, _count) {
   let result = '';
   while (count < _count) {
     _cars.forEach((car) => {
-      const randomDigit = getRandomSingleDigit();
+      const randomDigit = getRandomSingleDigit(0, 9);
       if (randomDigit >= 4) {
         car.move();
       }
