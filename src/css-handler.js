@@ -1,7 +1,8 @@
 export default function toggleTagDisplay(tagStyleDisplay) {
-  if (tagStyleDisplay.style.display === 'none') {
-    tagStyleDisplay.style.display = 'block';
+  const _tagStyleDisplay = tagStyleDisplay;
+  if (_tagStyleDisplay.style.display === 'none') {
+    _tagStyleDisplay.style.display = 'block';
   } else {
-    tagStyleDisplay.style.display = 'none';
+    _tagStyleDisplay.style.display = 'none';
   }
 }
