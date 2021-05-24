@@ -1,6 +1,6 @@
 import { checkValidCarName, checkValidCount } from './check-value.js';
 import { getInputCarName, getInputCount } from './input.js';
-import getRandomSingleDigit from './random.js';
+import startGame from './game.js';
 import toggleTagDisplay from './css-handler.js';
 import Car from './car.js';
 
@@ -15,39 +15,7 @@ export default function initGame() {
   toggleTagDisplay('racing-count-container');
   toggleTagDisplay('result-container');
   registerButtonEvent();
-
-  /*
-   ** Start Game
-   */
-
-  function getWinners() {
-    const totalDistances = _cars.map((car) => car.distance);
-    const maxDistance = Math.max(...totalDistances);
-    return _cars
-      .filter((car) => {
-        return car.distance === maxDistance;
-      })
-      .map((winner) => winner.name);
-  }
-
-  function startGame() {
-    let count = 0;
-    let result = '';
-    while (count < _count) {
-      _cars.forEach((car) => {
-        const randomDigit = getRandomSingleDigit();
-        if (randomDigit >= 4) {
-          car.move();
-        }
-        result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
-      });
-      result += '<br>';
-      count += 1;
-    }
-    const $resultContainer = document.getElementById('result-container');
-    $resultContainer.innerHTML += `${result}<br>최종 우승자:${getWinners().join()}`;
-  }
-
+  
   /*
    ** Event Listener
    */
@@ -79,7 +47,7 @@ export default function initGame() {
     }
     _count = parseInt(_count, 10);
     toggleTagDisplay('result-container');
-    startGame();
+    startGame(_cars, _count);
   }
 
   function registerButtonEvent() {
