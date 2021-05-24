@@ -1,7 +1,16 @@
 'use strict';
 
-function Car(name) {
-  this.name = name;
+import getRandomSingleDigit from './random.js';
+
+class Car {
+  constructor(name) {
+    this.name = name;
+    this.distance = 0;
+  }
+
+  _m_move(distance) {
+    this.distance += distance;
+  }
 }
 
 function toggleTagDisplay(id) {
@@ -29,8 +38,24 @@ export default function initGame() {
    ** Start Game
    */
 
+  function getWinner() {
+    const totalDistances = _cars.map((car) => car.distance);
+    const maxDistance = Math.max(...totalDistances);
+    return _cars.filter((car) => {
+      return car.distance == maxDistance;
+    });
+  }
+
   function startGame() {
-    
+    let count = 0;
+    while (count < _count) {
+      _cars.forEach((car) => {
+        car._m_move(getRandomSingleDigit());
+      });
+      count += 1;
+    }
+    console.log(_cars);
+    console.log(getWinner());
   }
 
   /*
@@ -42,6 +67,13 @@ export default function initGame() {
       (carName) => carName.length <= 5 && carName != '',
     );
     return validCarName.length === carNames.length;
+  }
+
+  function checkValidCount(count) {
+    if (count === String(parseInt(count))) {
+      return true;
+    }
+    return false;
   }
 
   /*
@@ -68,7 +100,9 @@ export default function initGame() {
   function clickCarNamesSubmit() {
     let inputCarNames = getInputCarName();
     if (!checkValidCarName(inputCarNames)) {
-      alert('유효하지 않은 입력입니다. 재입력 해주세요. 입력: ', inputCarNames);
+      alert(
+        `유효하지 않은 입력입니다. 재입력 해주세요. 입력: ${inputCarNames}`,
+      );
       return;
     }
     inputCarNames.forEach((name) => {
@@ -79,6 +113,11 @@ export default function initGame() {
 
   function clickRacingCountSubmit() {
     _count = getInputCount();
+    if (!checkValidCount(_count)) {
+      alert(`유효하지 않은 입력입니다. 재입력 해주세요.`);
+      return;
+    }
+    _count = parseInt(_count);
     toggleTagDisplay('result-container');
     startGame();
   }
