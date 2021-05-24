@@ -18,17 +18,23 @@ function printWinners(result, _cars) {
   ).join()}`;
 }
 
+function moveCar(_cars) {
+  let result = '';
+  for (let i = 0; i < _cars.length; i += 1) {
+    if (getRandomSingleDigit(0, 9) >= 4) {
+      _cars[i].move();
+    }
+    result += `${_cars[i].name}: ${'-'.repeat(_cars[i].distance)}<br>`;
+  }
+  result += '<br>';
+  return result;
+}
+
 export default function startGame(_cars, _count) {
   let result = '';
   let count = 0;
   while (count < _count) {
-    for (let car of _cars) {
-      if (getRandomSingleDigit(0, 9) >= 4) {
-        car.move();
-      }
-      result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
-    }
-    result += '<br>';
+    result += moveCar(_cars);
     count += 1;
   }
   printWinners(result, _cars);
