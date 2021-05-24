@@ -1,9 +1,11 @@
+import getElements from './elements.js';
+
 function getInputCarName() {
-  return document.getElementById('car-names-input').value.split(',');
+  return getElements.carNamesInput.value.split(',');
 }
 
 function getInputCount() {
-  return document.getElementById('racing-count-input').value;
+  return getElements.racingCountInput.value;
 }
 
 export { getInputCarName, getInputCount };
