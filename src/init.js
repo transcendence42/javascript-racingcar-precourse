@@ -1,6 +1,6 @@
-import getElements from './elements.js';
-import toggleTagDisplay from './css-handler.js';
 import registerButtonEvent from './event-listener.js';
+import toggleTagDisplay from './css-handler.js';
+import getElements from './elements.js';
 
 export default function initGame() {
   toggleTagDisplay(getElements.racingCountContainer);
