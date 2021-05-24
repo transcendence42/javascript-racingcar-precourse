@@ -25,7 +25,7 @@ export default function initGame() {
     const maxDistance = Math.max(...totalDistances);
     return _cars
       .filter((car) => {
-        return car.distance == maxDistance;
+        return car.distance === maxDistance;
       })
       .map((winner) => winner.name);
   }
