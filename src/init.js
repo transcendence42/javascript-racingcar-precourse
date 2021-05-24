@@ -8,8 +8,8 @@ class Car {
     this.distance = 0;
   }
 
-  _m_move(distance) {
-    this.distance += distance;
+  _m_move() {
+    this.distance += 1;
   }
 }
 
@@ -56,10 +56,12 @@ export default function initGame() {
     while (count < _count) {
       _cars.forEach((car) => {
         const randomDigit = getRandomSingleDigit();
-        car._m_move(randomDigit);
+        if (randomDigit >= 4) {
+          car._m_move();
+        }
         result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
       });
-      result += '<br>'
+      result += '<br>';
       count += 1;
     }
     const $resultContainer = document.getElementById('result-container');
