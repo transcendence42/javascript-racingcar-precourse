@@ -14,6 +14,7 @@ module.exports = {
     'no-alert': 'off',
     'no-plusplus': 'error',
     'no-param-reassign': 'error',
+    'no-underscore-dangle': 'off',
     'no-return-assign': 'error',
     'max-depth': ['error', 2],
     'max-lines-per-function': ['error', 15],
