@@ -35,6 +35,10 @@ export default function initGame() {
 
   return;
   /*
+   ** innerHTML
+   */
+
+  /*
    ** Start Game
    */
 
@@ -48,12 +52,18 @@ export default function initGame() {
 
   function startGame() {
     let count = 0;
+    let result = '';
     while (count < _count) {
       _cars.forEach((car) => {
-        car._m_move(getRandomSingleDigit());
+        const randomDigit = getRandomSingleDigit();
+        car._m_move(randomDigit);
+        result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
       });
+      result += '<br>'
       count += 1;
     }
+    const $resultContainer = document.getElementById('result-container');
+    $resultContainer.innerHTML += result;
     console.log(_cars);
     console.log(getWinner());
   }
