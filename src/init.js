@@ -1,8 +1,8 @@
-import { checkValidCarName, checkValidCount } from './check-value';
-import { getInputCarName, getInputCount } from './input';
-import getRandomSingleDigit from './random';
-import toggleTagDisplay from './css-handler';
-import Car from './car';
+import { checkValidCarName, checkValidCount } from './check-value.js';
+import { getInputCarName, getInputCount } from './input.js';
+import getRandomSingleDigit from './random.js';
+import toggleTagDisplay from './css-handler.js';
+import Car from './car.js';
 
 /*
  ** Init

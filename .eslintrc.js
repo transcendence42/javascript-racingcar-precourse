@@ -18,5 +18,6 @@ module.exports = {
     'no-return-assign': 'error',
     'max-depth': ['error', 2],
     'max-lines-per-function': ['error', 15],
+    'import/extensions': ['off'],
   },
 };
