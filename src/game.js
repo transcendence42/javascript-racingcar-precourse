@@ -22,12 +22,12 @@ export default function startGame(_cars, _count) {
   let result = '';
   let count = 0;
   while (count < _count) {
-    _cars.forEach((car) => {
+    for (let car of _cars) {
       if (getRandomSingleDigit(0, 9) >= 4) {
         car.move();
       }
       result += `${car.name}: ${'-'.repeat(car.distance)}<br>`;
-    });
+    }
     result += '<br>';
     count += 1;
   }
