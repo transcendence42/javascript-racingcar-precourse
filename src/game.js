@@ -12,8 +12,8 @@ function findWinners(_cars) {
 }
 
 export default function startGame(_cars, _count) {
-  let count = 0;
   let result = '';
+  let count = 0;
   while (count < _count) {
     _cars.forEach((car) => {
       const randomDigit = getRandomSingleDigit(0, 9);
