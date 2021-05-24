@@ -1,8 +1,6 @@
-'use strict';
-
 function checkValidCarName(carNames) {
   const validCarName = carNames.filter(
-    (carName) => carName.length <= 5 && carName != '',
+    (carName) => carName.length <= 5 && carName !== '',
   );
   return validCarName.length === carNames.length;
 }

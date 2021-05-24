@@ -1,5 +1,3 @@
-'use strict';
-
 import { checkValidCarName, checkValidCount } from './check-value.js';
 import { getInputCarName, getInputCount } from './input.js';
 import getRandomSingleDigit from './random.js';
@@ -11,14 +9,12 @@ import Car from './car.js';
  */
 
 export default function initGame() {
-  let _cars = [];
+  const _cars = [];
   let _count = 0;
 
   toggleTagDisplay('racing-count-container');
   toggleTagDisplay('result-container');
   registerButtonEvent();
-
-  return;
 
   /*
    ** Start Game
@@ -49,8 +45,7 @@ export default function initGame() {
       count += 1;
     }
     const $resultContainer = document.getElementById('result-container');
-    $resultContainer.innerHTML +=
-      result + '<br>최종 우승자:' + getWinners().join();
+    $resultContainer.innerHTML += `${result}<br>최종 우승자:${getWinners().join()}`;
   }
 
   /*
@@ -63,7 +58,7 @@ export default function initGame() {
   }
 
   function clickCarNamesSubmit() {
-    let inputCarNames = getInputCarName();
+    const inputCarNames = getInputCarName();
     if (!checkValidCarName(inputCarNames)) {
       alert(
         `유효하지 않은 입력입니다. 재입력 해주세요. 입력: ${inputCarNames}`,

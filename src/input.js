@@ -1,5 +1,3 @@
-'use strict';
-
 function getInputCarName() {
   return document.getElementById('car-names-input').value.split(',');
 }

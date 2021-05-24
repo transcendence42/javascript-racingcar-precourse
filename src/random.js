@@ -1,5 +1,3 @@
-'use strict';
-
 export default function getRandomSingleDigit() {
   const min = 0;
   const max = 9;

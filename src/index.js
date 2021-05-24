@@ -1,5 +1,3 @@
-'use strict';
-
 import initGame from './init.js';
 
 export default function RacingCarGame() {
