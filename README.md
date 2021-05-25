@@ -1,14 +1,34 @@
 # 🏎️ 자동차 경주 게임
 ### to know
-- [ ]
+- [x] [Array](https://coding-factory.tistory.com/194)
+> 자바스크립트의 배열이 다른 언어와 다른 점:
+> 1. 배열 내부의 데이터 타입이 서로 다를 수 있다.
+> 2. 배열의 크기는 동적으로 변경될 수 있다. 
+
+- [x] [querySelector()](https://javacpro.tistory.com/36)
+- [x] [일반함수의 this](https://poiemaweb.com/js-this)
+> 자바스크립트의 경우 Java와 같이 this에 바인딩되는 객체는 한가지가 아니라 해당 함수 호출 방식에 따라 this에 바인딩되는 객체가 달라진다. 또한 메소드의 내부함수일 경우에도 this는 전역객체에 바인딩된다. 콜백함수의 경우에도 this는 전역객체에 바인딩된다.
+
+- [x] [화살표 함수와 this](https://ko.javascript.info/arrow-functions-basics)
+> 화살표 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정된다. 동적으로 결정되는 일반 함수와는 달리 화살표 함수의 this 언제나 상위 스코프의 this를 가리킨다. 이를 Lexical this라 한다.
+
+- [x] [이벤트에 매개변수 넘기기](https://blog.edit.kr/entry/addEventListener%EC%97%90-%ED%98%B8%EC%B6%9C-%ED%95%A8%EC%88%98%EC%97%90-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%EB%84%A3%EA%B8%B0)
+> addEventListener에서 함수에 parameter를 전달하고 싶다면, 익명을 함수를 사용해야 합니다.
 
 ### to implement
-- [ ] 자동차 이름 입력 검증 함수
-- [ ] 잘못된 입력 시 재입력 함수
-- [ ] 0~9 숫자 랜덤 생성 함수
+#### RacingCarGame class
+- [x] 자동차 이름 입력 함수
+  - [x] 자동차 이름 입력 검증 함수
+  - [x] 잘못된 입력 시 재입력
+- [x] 시도 횟수 입력 함수
+  - [x] 시도 횟수 입력 검증 함수
+  - [x] 잘못된 입력 시 재입력
 - [ ] 한번의 횟수 실행 함수
 - [ ] 실행된 내용 보여주는 함수
 - [ ] 우승자 보여주는 함수
+
+#### Car class
+- [x] 0~9 숫자 랜덤 생성 함수
  
 ***
 ## 🎯 기능 요구사항
