@@ -15,6 +15,8 @@
 - [x] [이벤트에 매개변수 넘기기](https://blog.edit.kr/entry/addEventListener%EC%97%90-%ED%98%B8%EC%B6%9C-%ED%95%A8%EC%88%98%EC%97%90-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%EB%84%A3%EA%B8%B0)
 > addEventListener에서 함수에 parameter를 전달하고 싶다면, 익명을 함수를 사용해야 합니다.
 
+- [x] [태그 보이기 숨기기](https://sehoonkim.tistory.com/203)
+
 ### to implement
 #### RacingCarGame class
 - [x] 자동차 이름 입력 함수
