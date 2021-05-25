@@ -1,0 +1,18 @@
+{
+  "name": "javascript-racingcar-precourse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/transcendence42/javascript-racingcar-precourse.git",
+  "author": "jwon42 <jwon@student.42seoul.kr>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-plugin-react": "^7.23.2"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  }
+}
