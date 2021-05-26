@@ -1,7 +1,6 @@
 function showResult(cars, repeatNum) {
   const location = repeatNum == 0 ? '#result' : '#result_' + (repeatNum - 1);
   const resultHead = document.getElementById(location);
-  console.log(resultHead);
   resultHead.insertAdjacentHTML(
     "afterend",
     `<div id=#result_${repeatNum}></div>`
@@ -19,14 +18,6 @@ function showResult(cars, repeatNum) {
   newDiv.insertAdjacentHTML('beforeend', ret);
 }
 
-function runDice(item) {
-  let ret = Math.random() * 9;
-  console.log(ret);
-  if (ret >= 4) {
-    item._score += 1;
-  }
-}
-
 function showChampion(cars, inputNum) {
   let finalScore = cars.map(x => x._score);
   let highestScore = Math.max.apply(null, finalScore);
@@ -42,20 +33,16 @@ function showChampion(cars, inputNum) {
   }
   const lastDiv = document.getElementById('#result_' + (inputNum - 1));
   lastDiv.insertAdjacentHTML('afterend', champion);
-  console.log(champion);
 }
 
 export default function startRace({ inputNum, cars }) {
   let repeatNum = 0;
-  console.log(inputNum);
   while (repeatNum < inputNum) {
-    console.log(repeatNum);
     cars.forEach(item => {
       let ret = Math.random() * 9;
       if (ret >= 4) {
         item._score += 1;
       }
-      console.log(ret, item._score);
     });
     showResult(cars, repeatNum);
     repeatNum += 1;
