@@ -4,11 +4,7 @@ export default class Car {
     this.position = 0;
   }
 
-  movePosition() {
+  moveForward() {
     this.position += 1;
   }
-
-  // initPosition() {
-  //   this.position = 0;
-  // }
 }
