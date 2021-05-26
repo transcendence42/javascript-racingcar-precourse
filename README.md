@@ -16,7 +16,13 @@
 > addEventListener에서 함수에 parameter를 전달하고 싶다면, 익명을 함수를 사용해야 합니다.
 
 - [x] [태그 보이기 숨기기](https://sehoonkim.tistory.com/203)
+- [x] [모듈이란](https://ko.javascript.info/modules-intro)
+- [x] [모듈 내보내기 가져오기](https://ko.javascript.info/import-export)
+> 모듈은 export default라는 특별한 문법을 지원합니다. export default를 사용하면 '해당 모듈엔 개체가 하나만 있다’는 사실을 명확히 나태낼 수 있습니다.
 
+- [x] [event.target vs event.currentTarget](https://velog.io/@edie_ko/JavaScript-event-target%EA%B3%BC-currentTarget%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)
+- [x] [구조분해할당](https://ko.javascript.info/destructuring-assignment)
+ 
 ### to implement
 #### RacingCarGame class
 - [x] 자동차 이름 입력 함수
@@ -25,9 +31,9 @@
 - [x] 시도 횟수 입력 함수
   - [x] 시도 횟수 입력 검증 함수
   - [x] 잘못된 입력 시 재입력
-- [ ] 한번의 횟수 실행 함수
-- [ ] 실행된 내용 보여주는 함수
-- [ ] 우승자 보여주는 함수
+- [x] 한번의 횟수 실행 함수
+- [x] 실행된 내용 보여주는 함수
+- [x] 우승자 보여주는 함수
 
 #### Car class
 - [x] 0~9 숫자 랜덤 생성 함수
