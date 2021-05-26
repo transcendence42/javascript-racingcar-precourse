@@ -1,4 +1,4 @@
-import { renderRaceResult } from './render.js';
+import { renderRaceResult, renderWinner } from './render.js';
 
 function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * max) + min;
@@ -18,25 +18,26 @@ function checkDiceWinner(carObjectArray) {
     if (playDice()) {
       car.moveForward();
     }
-  })
+  });
 }
 
 function getMaxPosition(carObjectArray) {
   let position = 0;
 
   carObjectArray.forEach((car) => {
-    if (car.position > position)
+    if (car.position > position) {
       position = car.position;
+    }
   });
   return position;
 }
 
 function getWinnerArray(carObjectArray) {
-  let winnerCarArray = [];
+  const winnerCarArray = [];
 
   carObjectArray.forEach((car) => {
     if (car.position === getMaxPosition(carObjectArray)) {
-      winnerCarArray.pusb(car.name);
+      winnerCarArray.push(car.name);
     }
   });
   return winnerCarArray;
@@ -45,7 +46,7 @@ function getWinnerArray(carObjectArray) {
 export default function startRace(carObjectArray, racingCount) {
   let winnerArray = [];
 
-  for (let index = 0; index < racingCount; index++) {
+  for (let index = 0; index < racingCount; index += 1) {
     checkDiceWinner(carObjectArray);
     renderRaceResult(carObjectArray);
   }

@@ -1,24 +1,24 @@
 const resultContainer = document.querySelector('.result-container');
 
 function racingProgressBar(carPosition) {
-	let bar = '';
+  let bar = '';
 
-	for (let index = 0 ; index < carPosition ; index++) {
-		bar += '-';
-	}
-	return bar;
+  for (let index = 0; index < carPosition; index += 1) {
+    bar += '-';
+  }
+  return bar;
 }
 
 export function renderRaceResult(carObjectArray) {
-	const racingResult = document.createElement('div');
-	let htmlString = '';
+  const racingResult = document.createElement('div');
+  let htmlString = '';
 
-	carObjectArray.forEach((car) => {
-		htmlString += `${car.name}: ${racingProgressBar(car.position)} <br>`
-	});
+  carObjectArray.forEach((car) => {
+    htmlString += `${car.name}: ${racingProgressBar(car.position)} <br>`;
+  });
   htmlString += `<br>`;
 
-  htmlString.innerHTML = racingResult;
+  racingResult.innerHTML = htmlString;
   resultContainer.appendChild(racingResult);
 }
 

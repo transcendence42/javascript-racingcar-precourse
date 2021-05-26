@@ -2,7 +2,7 @@ import Car from './car.js';
 import startRacing from './game.js';
 import { ERROR_INPUT } from './define-msg.js';
 
-let carObjectArray = [];
+const carObjectArray = [];
 let racingCount = 0;
 
 function checkEmptyInput(carNameInput) {
@@ -10,11 +10,11 @@ function checkEmptyInput(carNameInput) {
 }
 
 function checkDoubleElements(carNameArray) {
-  return Set(carNameArray).length !== carNameArray.length;
+  return new Set(carNameArray).length === carNameArray.length;
 }
 
 function checkValidCarNameLength(carNameArray) {
-  for (let index = 0; i < carNameArray.length; index++) {
+  for (let index = 0; index < carNameArray.length; index += 1) {
     if (carNameArray[index].length > 5) {
       return true;
     }
@@ -25,9 +25,11 @@ function checkValidCarNameLength(carNameArray) {
 function checkCarNames(carNameInput, carNameArray) {
   if (checkEmptyInput(carNameInput)) {
     return ERROR_INPUT.EMPTY;
-  } else if (checkDoubleElements(carNameArray)) {
+  }
+  if (checkDoubleElements(carNameArray)) {
     return ERROR_INPUT.DOUBLE;
-  } else if (checkValidCarNameLength(carNameArray)) {
+  }
+  if (checkValidCarNameLength(carNameArray)) {
     return ERROR_INPUT.LENGTH;
   }
   return ERROR_INPUT.NONE;
@@ -53,7 +55,7 @@ export function getCarNames() {
     alert(carNameValid);
     resetCarNamesInput();
     return;
-  };
+  }
   createCarObject(carNameArray);
 }
 
